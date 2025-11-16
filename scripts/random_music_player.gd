@@ -25,9 +25,9 @@ func _ready() -> void:
 	player.finished.connect(_on_player_finished)
 	timer.timeout.connect(_on_timer_timeout)
 	
-	play_random_track(tracks)
+	play_random_track()
 	
-func play_random_track(tracks) -> void:
+func play_random_track() -> void:
 	if tracks.is_empty(): return
 	
 	var idx: int = randi() % tracks.size()
@@ -45,4 +45,4 @@ func _on_player_finished() -> void:
 	timer.start(delay_between_tracks)
 	
 func _on_timer_timeout() -> void:
-	play_random_track(tracks)
+	play_random_track()

@@ -8,3 +8,4 @@ script = ExtResource("1_oknps")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
