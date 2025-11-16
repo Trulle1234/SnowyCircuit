@@ -510,3 +510,5 @@ position = Vector2(1352, -123)
 
 [node name="Ghost" parent="." instance=ExtResource("20_1kice")]
 position = Vector2(1546, -28)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
