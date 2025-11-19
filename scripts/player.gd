@@ -6,31 +6,42 @@ const GRAVITY = Vector2(0, 980.0)
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var coyote_timer: Timer = $CoyoteTimer
+var coyote_time_active: bool = false
+
+var is_dead: bool = false
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += GRAVITY * delta
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("left", "right")
 	
-	# flip
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
 	
-	# animation
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("run")
-	else:
+		
+		if coyote_time_active:
+			coyote_time_active = false
+			coyote_timer.stop()
+	elif not is_on_floor() and not is_dead:
 		animated_sprite.play("jump")
-	
-	# move
+		if not coyote_time_active:
+			coyote_timer.start()
+			coyote_time_active = true
+			
+	if Input.is_action_just_pressed("jump") and (not coyote_timer.is_stopped() or is_on_floor()):
+		velocity.y = JUMP_VELOCITY
+		coyote_timer.stop()
+		coyote_time_active = true
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:

@@ -1,8 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dftrpkfy22rxb"]
+[gd_scene load_steps=14 format=3 uid="uid://dftrpkfy22rxb"]
 
 [ext_resource type="Texture2D" uid="uid://bjfnfx5leqvj8" path="res://assets/sprites/characters/9 - Mr._Circuit_Idle (32 x 32).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bfx7naoqgcskq" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://deg5syqjde73y" path="res://assets/sprites/characters/9 - Mr._Circuit_Hurt (32 x 32).png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dfwqwltvltgnp" path="res://assets/sprites/characters/9 - Mr._Circuit_Running (32 x 32).png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -30,6 +35,14 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
@@ -76,9 +89,13 @@ script = ExtResource("1_g2els")
 z_index = 999
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"jump"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_qlg0r")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.12
+one_shot = true

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://dftrpkfy22rxb" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="FontFile" uid="uid://dgkb7afoeic48" path="res://assets/fonts/monogram-extended-italic.ttf" id="2_37s47"]
+[ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_37s47"]
 [ext_resource type="Texture2D" uid="uid://b6d8r8tmn4xrr" path="res://assets/sprites/winter/Terrain (16 x 16).png" id="2_dinhu"]
 [ext_resource type="Texture2D" uid="uid://blg06jr6fqe4y" path="res://assets/sprites/winter/Winter_entities (16 x 16).png" id="3_kvuet"]
 [ext_resource type="Texture2D" uid="uid://b2bhwaiucjflf" path="res://assets/sprites/winter/Background parts/_Complete_static_BG_(288 x 208).png" id="4_264po"]
@@ -350,16 +350,8 @@ _data = {
 unique_name_in_owner = true
 script = ExtResource("1_5newe")
 
-[node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 1535.0
-offset_top = -103.0
-offset_right = 1663.0
-offset_bottom = -55.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_37s47")
-text = "Great Job! You Made it & collected 0 coins."
-horizontal_alignment = 1
-autowrap_mode = 2
+[node name="UI" parent="." instance=ExtResource("2_37s47")]
+unique_name_in_owner = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(288, -585)
@@ -587,6 +579,15 @@ position = Vector2(1352, -136)
 
 [node name="Coin28" parent="Conis" instance=ExtResource("13_trtic")]
 position = Vector2(1512, -40)
+
+[node name="Coin29" parent="Conis" instance=ExtResource("13_trtic")]
+position = Vector2(392, -120)
+
+[node name="Coin30" parent="Conis" instance=ExtResource("13_trtic")]
+position = Vector2(424, -120)
+
+[node name="Coin31" parent="Conis" instance=ExtResource("13_trtic")]
+position = Vector2(472, -136)
 
 [node name="Platforms" type="Node" parent="."]
 
