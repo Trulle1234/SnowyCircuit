@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqlcynhf1g6vh"]
+
+[ext_resource type="Script" uid="uid://bfock3cqvueml" path="res://ui.gd" id="1_x4jx1"]
+[ext_resource type="FontFile" uid="uid://bq3dja3cmv766" path="res://assets/fonts/monogram-extended.ttf" id="2_yev5y"]
+[ext_resource type="Texture2D" uid="uid://dn7sun784b13t" path="res://assets/sprites/misc/Coin.png" id="3_yev5y"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_x4jx1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_bottom = 115.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="Control/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yev5y")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer"]
+position = Vector2(49, 60)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("3_yev5y")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
