@@ -1,11 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://dftrpkfy22rxb"]
+[gd_scene load_steps=20 format=3 uid="uid://dftrpkfy22rxb"]
 
 [ext_resource type="Texture2D" uid="uid://bjfnfx5leqvj8" path="res://assets/sprites/characters/9 - Mr._Circuit_Idle (32 x 32).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bfx7naoqgcskq" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://deg5syqjde73y" path="res://assets/sprites/characters/9 - Mr._Circuit_Hurt (32 x 32).png" id="2_dqkch"]
+[ext_resource type="Shader" uid="uid://bf6bdatcgatuw" path="res://scripts/darker_player.gdshader" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://b1y00pg6nm6hd" path="res://assets/sprites/characters/9 - Mr_Circut_Crouch.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dfwqwltvltgnp" path="res://assets/sprites/characters/9 - Mr._Circuit_Running (32 x 32).png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bm8n80t38ftw5" path="res://assets/sprites/winter/Background parts/1 - Snowy_foreground_area.png" id="4_qlg0r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smehm"]
+shader = ExtResource("2_fjrip")
+shader_parameter/active = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("2_tuyoq")
@@ -113,6 +118,7 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 999
+material = SubResource("ShaderMaterial_smehm")
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 animation = &"crouch"
