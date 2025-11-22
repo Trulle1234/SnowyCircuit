@@ -2,11 +2,16 @@ extends CanvasLayer
 
 @onready var label: Label = %Label
 
-var coins = 0
+var coins: int = 0
+
+func _ready():
+	coins = GameManager.coins
+	update_coins_label()
 
 func update_coins(value):
 	coins += value
-	uptade_coins_label()
-	
-func uptade_coins_label():
+	GameManager.coins = coins
+	update_coins_label()
+
+func update_coins_label():
 	label.text = str(coins)
