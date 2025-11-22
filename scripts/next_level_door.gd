@@ -36,9 +36,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 	timer.start()
 
-
 func _on_timer_timeout() -> void:
 	if FileAccess.file_exists(next_level_path):
 		get_tree().change_scene_to_file(next_level_path)
 	else:
+		
 		get_tree().change_scene_to_file(FILE_BEGIN + "1.tscn")
