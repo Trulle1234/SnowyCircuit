@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://gdl5w12ph8w4"]
+
+[ext_resource type="Shader" uid="uid://hh4q3w3r81jq" path="res://scripts/darker_one_way_platform.gdshader" id="1_i12r5"]
+[ext_resource type="Texture2D" uid="uid://cqh2je6db0mpl" path="res://assets/sprites/misc/Blocks (16 x 16).png" id="1_sxyqs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cx65f"]
+shader = ExtResource("1_i12r5")
+shader_parameter/active = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i12r5"]
+size = Vector2(32, 8)
+
+[node name="DarkerOneWayPlatform" type="AnimatableBody2D"]
+
+[node name="Sprite2D1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cx65f")
+position = Vector2(16, 0)
+texture = ExtResource("1_sxyqs")
+region_enabled = true
+region_rect = Rect2(64, 48, 16, 9)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cx65f")
+texture = ExtResource("1_sxyqs")
+region_enabled = true
+region_rect = Rect2(64, 48, 16, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_i12r5")
+one_way_collision = true
