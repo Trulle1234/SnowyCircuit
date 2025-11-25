@@ -5,7 +5,6 @@ const CROUCH_SPEED = 1.0
 const JUMP_VELOCITY = -300.0
 const GRAVITY = Vector2(0, 980.0)
 
-
 var speed = BASE_SPEED
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D

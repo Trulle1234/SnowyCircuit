@@ -25,7 +25,7 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	
 	play_random_track()
-	
+		
 func play_random_track() -> void:
 	if tracks.is_empty(): return
 	
