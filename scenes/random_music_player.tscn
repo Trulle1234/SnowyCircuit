@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b3ag2xrg1wo7f" path="res://scripts/random_music_player.gd" id="1_oknps"]
 
 [node name="RandomMusicPlayer" type="AudioStreamPlayer2D"]
+max_distance = 4096.0
+attenuation = 1e-05
 bus = &"Music"
 script = ExtResource("1_oknps")
 

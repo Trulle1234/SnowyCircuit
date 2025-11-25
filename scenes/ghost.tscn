@@ -1,22 +1,22 @@
 [gd_scene load_steps=10 format=3 uid="uid://b10pg1rr7fut0"]
 
-[ext_resource type="Texture2D" uid="uid://bos0btbxipgbo" path="res://assets/sprites/characters/10 - Blankey_Floating (32 x 32).png" id="1_6attn"]
+[ext_resource type="Texture2D" uid="uid://djhw7l3cjtpt1" path="res://assets/sprites/characters/10 - Blankey_Floating (32 x 32).png" id="1_6attn"]
 [ext_resource type="Script" uid="uid://bxxhd2nybltax" path="res://scripts/ghost.gd" id="1_bbnym"]
 [ext_resource type="PackedScene" uid="uid://cmcbjd5n56gt3" path="res://scenes/killzone.tscn" id="2_obmiq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtt71"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbnym"]
 atlas = ExtResource("1_6attn")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kjq22"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_veat2"]
 atlas = ExtResource("1_6attn")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hiw70"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mfnq"]
 atlas = ExtResource("1_6attn")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jw18l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv6vd"]
 atlas = ExtResource("1_6attn")
 region = Rect2(96, 0, 32, 32)
 
@@ -24,16 +24,16 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xtt71")
+"texture": SubResource("AtlasTexture_bbnym")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kjq22")
+"texture": SubResource("AtlasTexture_veat2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hiw70")
+"texture": SubResource("AtlasTexture_5mfnq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jw18l")
+"texture": SubResource("AtlasTexture_lv6vd")
 }],
 "loop": true,
 "name": &"default",
@@ -49,7 +49,6 @@ script = ExtResource("1_bbnym")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2jh1f")
 autoplay = "default"
-frame = 2
 frame_progress = 0.7961427
 flip_h = true
 

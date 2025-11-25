@@ -26,7 +26,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 	body.is_dead = true
 	body.velocity.x = 0
-
+	
+	GameManager.set_start_coins(GameManager.coins)
+	
 	animated_sprite.play("closed")
 	audio_player.play()
 

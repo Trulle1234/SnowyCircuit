@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djhw7l3cjtpt1"
-path="res://.godot/imported/10 - Blankey_Floating (32 x 32).png-1df8cf2d308aaebaed298239ab734376.ctex"
+uid="uid://b845tl3h4ikfg"
+path="res://.godot/imported/10 - Dark_Blankey_Floating (32 x 32).png-033e28cf8c94748d7a15f7624a39378b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/10 - Blankey_Floating (32 x 32).png"
-dest_files=["res://.godot/imported/10 - Blankey_Floating (32 x 32).png-1df8cf2d308aaebaed298239ab734376.ctex"]
+source_file="res://assets/sprites/characters/10 - Dark_Blankey_Floating (32 x 32).png"
+dest_files=["res://.godot/imported/10 - Dark_Blankey_Floating (32 x 32).png-033e28cf8c94748d7a15f7624a39378b.ctex"]
 
 [params]
 
