@@ -8,24 +8,27 @@ shader = ExtResource("1_i12r5")
 shader_parameter/active = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i12r5"]
-size = Vector2(32, 8)
+size = Vector2(32, 9)
 
 [node name="DarkerOneWayPlatform" type="AnimatableBody2D"]
 
 [node name="Sprite2D1" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cx65f")
-position = Vector2(16, 0)
+position = Vector2(8, -4)
 texture = ExtResource("1_sxyqs")
+centered = false
 region_enabled = true
 region_rect = Rect2(64, 48, 16, 9)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cx65f")
+position = Vector2(-8, -4)
 texture = ExtResource("1_sxyqs")
+centered = false
 region_enabled = true
 region_rect = Rect2(64, 48, 16, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 0)
+position = Vector2(8, 0.5)
 shape = SubResource("RectangleShape2D_i12r5")
 one_way_collision = true
