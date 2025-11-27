@@ -68,10 +68,10 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.45490196, 0.26666668, 0.5529412, 1)
 theme_override_fonts/font = ExtResource("2_yev5y")
 theme_override_font_sizes/font_size = 64
-text = "00:00:00"
+text = "00:00.0"
 
 [node name="Timer" type="Timer" parent="Control/TimerMargin"]
-wait_time = 0.1
+wait_time = 0.009999999999999998
 autostart = true
 
 [connection signal="timeout" from="Control/TimerMargin/Timer" to="Control/TimerMargin" method="_on_timer_timeout"]

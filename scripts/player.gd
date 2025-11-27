@@ -23,6 +23,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	
 	if not is_dead:
+		if direction != 0:
+			GameManager.has_moved = true
+		
 		if direction > 0:
 			animated_sprite.flip_h = false
 		elif direction < 0:
@@ -33,7 +36,7 @@ func _physics_process(delta: float) -> void:
 				animated_sprite.play("crouch")
 				
 				speed = CROUCH_SPEED
-				position.y += 1
+				position.y += 3
 				
 			else:
 				speed = BASE_SPEED
