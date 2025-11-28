@@ -53,6 +53,8 @@ shape = SubResource("RectangleShape2D_cutrx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1qxk8")
+max_distance = 4096.0
+attenuation = 1e-05
 bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
