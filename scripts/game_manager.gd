@@ -11,8 +11,7 @@ var show_mouse = false
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-@warning_ignore("unused_parameter")
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_anything_pressed():
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	

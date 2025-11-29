@@ -13,6 +13,10 @@ config_version=5
 config/name="SnowyCircuit"
 run/main_scene="uid://cufci385o641h"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(1, 0.972549, 1, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://6s557d2hva3s"
+boot_splash/minimum_display_time=1100
 
 [autoload]
 
