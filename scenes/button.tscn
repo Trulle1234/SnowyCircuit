@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckokny0nf44h7"]
+[gd_scene load_steps=9 format=3 uid="uid://ckokny0nf44h7"]
 
 [ext_resource type="Script" uid="uid://cwmt1htlhx5l7" path="res://scripts/button.gd" id="1_rhj8v"]
 [ext_resource type="Texture2D" uid="uid://dny25w2ettybq" path="res://assets/sprites/misc/Buttons.png" id="2_3q610"]
@@ -36,6 +36,9 @@ size = Vector2(16, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhj8v"]
 size = Vector2(16, 9)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7y4x"]
+size = Vector2(16, 10)
+
 [node name="Button" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_rhj8v")
@@ -58,12 +61,8 @@ position = Vector2(8, 11.5)
 shape = SubResource("RectangleShape2D_rhj8v")
 
 [node name="CollisionShapeOn" type="CollisionShape2D" parent="."]
-position = Vector2(8, 13)
-shape = SubResource("RectangleShape2D_3q610")
-disabled = true
-
-[node name="CollisionShapeOff" type="CollisionShape2D" parent="."]
-position = Vector2(8, 11.5)
-shape = SubResource("RectangleShape2D_rhj8v")
+position = Vector2(8, 11)
+shape = SubResource("RectangleShape2D_i7y4x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
