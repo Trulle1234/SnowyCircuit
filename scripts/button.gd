@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $StaticBody2D/AnimatedSprite2D
 
+@onready var audio_player: AudioStreamPlayer2D = $StaticBody2D/AudioStreamPlayer2D
+
 @onready var collision_shape_on: CollisionShape2D = $StaticBody2D/CollisionShapeOn
 @onready var collision_shape_off: CollisionShape2D = $StaticBody2D/CollisionShapeOff
 
@@ -21,6 +23,7 @@ func _on_body_exited(_body: Node2D) -> void:
 func _process(_delta: float) -> void:
 	if in_range and Input.is_action_just_pressed("crouch"):
 		is_on = !is_on
+		audio_player.play()
 		
 		if is_on:
 			sprite.play("on")
