@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://btvsgs4mlb1y"]
+[gd_scene load_steps=64 format=4 uid="uid://btvsgs4mlb1y"]
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_05se8"]
 [ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_12cdj"]
@@ -23,7 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://cv2nr3h2tlypg" path="res://assets/sprites/misc/Black_Background.png" id="19_lc5pf"]
 [ext_resource type="PackedScene" uid="uid://b8f5yjbjgkfn3" path="res://scenes/next_level_door.tscn" id="20_kqkch"]
 [ext_resource type="Texture2D" uid="uid://csjnpoyr5vkke" path="res://assets/sprites/misc/Doors.png" id="21_iblbt"]
+[ext_resource type="Script" uid="uid://6dugne85hkxi" path="res://scripts/door_1.gd" id="22_io455"]
 [ext_resource type="PackedScene" uid="uid://b10pg1rr7fut0" path="res://scenes/ghost.tscn" id="22_lc5pf"]
+[ext_resource type="PackedScene" uid="uid://c5ir2p247yl0x" path="res://scenes/platform.tscn" id="22_uyomx"]
 [ext_resource type="PackedScene" uid="uid://ckokny0nf44h7" path="res://scenes/button.tscn" id="25_0n65g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syeym"]
@@ -742,6 +744,130 @@ sources/12 = SubResource("TileSetAtlasSource_8hw10")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_60f7k"]
 distance = 65.0
 
+[sub_resource type="Animation" id="Animation_uyomx"]
+resource_name = "door1_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 32), Vector2(0, -16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 16), Vector2(0, -32)]
+}
+
+[sub_resource type="Animation" id="Animation_io455"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_suy3i"]
+resource_name = "door1_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -32), Vector2(0, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -16), Vector2(0, 32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -48), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_suy3i"]
+_data = {
+&"RESET": SubResource("Animation_io455"),
+&"door1_close": SubResource("Animation_suy3i"),
+&"door1_open": SubResource("Animation_uyomx")
+}
+
 [node name="Level4" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -873,7 +999,7 @@ tile_set = SubResource("TileSet_fgtm3")
 
 [node name="Mid" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD5/wAADAAEAAMAAAD6/wAADAAEAAMAAAD7/wAADAAEAAMAAAABAAAADAAEAAMAAAACAAAADAAEAAMAAAAAAAAADAAEAAMAAAD9/wAADAAEAAMAAAD8/wAADAAEAAMAAAD//wAADAAEAAMAAAD+/wAADAAEAAMAAAD4/wAADAAEAAMAAAAHAP7/DAAEAAMAAAAHAP//DAAEAAMAAAAHAAAADAAEAAMAAAAHAAEADAAEAAMAAAAHAAIADAAEAAMAAAAIAP7/DAAEAAMAAAAHAPr/DAAEAAMAAAAIAPr/DAAEAAMAAAAIAPn/DAAEAAMAAAAIAPj/DAAEAAMAAAAIAPf/DAAEAAMAAAAHAPf/DAAEAAMAAAAHAPj/DAAEAAMAAAAHAPn/DAAEAAMAAAAIAP//DAAEAAMAAAAIAAAADAAEAAMAAAAIAAEADAAEAAMAAAAIAAIADAAEAAMAAAANAP//DAAEAAMAAAANAAAADAAEAAMAAAANAAEADAAEAAMAAAANAAIADAAEAAMAAAANAAMADAAEAAMAAAAOAP//DAAEAAMAAAAOAAAADAAEAAMAAAAOAAEADAAEAAMAAAAOAAIADAAEAAMAAAANAPv/DAAEAAMAAAANAPr/DAAEAAMAAAANAPn/DAAEAAMAAAANAPj/DAAEAAMAAAAOAPv/DAAEAAMAAAAOAPr/DAAEAAMAAAAOAPn/DAAEAAMAAAASAP3/DAAEAAMAAAASAP7/DAAEAAMAAAASAP//DAAEAAMAAAASAAAADAAEAAMAAAASAAEADAAEAAMAAAATAP3/DAAEAAMAAAATAP7/DAAEAAMAAAATAP//DAAEAAMAAAATAAAADAAEAAMAAAATAAEADAAEAAMAAAASAPn/DAAEAAMAAAATAPn/DAAEAAMAAAATAPj/DAAEAAMAAAATAPf/DAAEAAMAAAASAPf/DAAEAAMAAAASAPb/DAAEAAMAAAASAPX/DAAEAAMAAAATAPb/DAAEAAMAAAATAPX/DAAEAAMAAAASAPj/DAAEAAMAAAAZAPz/DAAEAAMAAAAZAP3/DAAEAAMAAAAZAP7/DAAEAAMAAAAZAP//DAAEAAMAAAAZAAAADAAEAAMAAAAaAP3/DAAEAAMAAAAaAP7/DAAEAAMAAAAaAP//DAAEAAMAAAAaAPz/DAAEAAMAAAAZAPn/DAAEAAMAAAAaAPn/DAAEAAMAAAAaAPj/DAAEAAMAAAAaAPf/DAAEAAMAAAAZAPf/DAAEAAMAAAAZAPb/DAAEAAMAAAAZAPj/DAAEAAMAAAAaAPb/DAAEAAMAAAAbAPz/DAAEAAMAAAAcAPz/DAAEAAMAAAAdAPz/DAAEAAMAAAAdAPv/DAAEAAMAAAAeAPv/DAAEAAMAAAAbAPn/DAAEAAMAAAAcAPj/DAAEAAMAAAAdAPj/DAAEAAMAAAAeAPj/DAAEAAMAAAAfAPv/DAADAAQAAAAgAPr/DAADAAQAAAAfAPf/DAADAAQAAAAgAPf/DAADAAQAAAAhAPr/DAADAAQAAAAiAPr/DAADAAQAAAAhAPf/DAADAAQAAAAiAPf/DAADAAQAAAAjAPv/DAADAAQAAAAkAPj/DAADAAQAAAAjAPf/DAADAAQAAAAlAPn/DAADAAQAAAAkAPz/DAADAAQAAAAlAPz/DAADAAQAAAAmAPz/DAADAAQAAAAmAPn/DAADAAQAAAAnAPj/DAADAAQAAAAnAPz/DAADAAQAAAAoAPv/DAADAAQAAAAoAPf/DAADAAQAAAApAPr/DAADAAQAAAApAPf/DAADAAQAAAAyAPr/DAAEAAMAAAAyAPv/DAAEAAMAAAAyAP3/DAAEAAMAAAAzAPr/DAAEAAMAAAAzAPv/DAAEAAMAAAA0APr/DAAEAAMAAAA0APv/DAAEAAMAAAAtAPz/DAAEAAMAAAAtAP3/DAAEAAMAAAAtAP7/DAAEAAMAAAAtAP//DAAEAAMAAAAtAAAADAAEAAMAAAAuAPz/DAAEAAMAAAAuAP3/DAAEAAMAAAAuAP7/DAAEAAMAAAAuAP//DAAEAAMAAAAuAAAADAAEAAMAAAAyAPz/DAAEAAMAAAAyAP7/DAAEAAMAAAAyAP//DAAEAAMAAAAzAPz/DAAEAAMAAAAzAP3/DAAEAAMAAAA0AP3/DAAEAAMAAAA1APr/DAAEAAMAAAA1APv/DAAEAAMAAAA2APr/DAAEAAMAAAA2APv/DAAEAAMAAAA=")
+tile_map_data = PackedByteArray("AAD5/wAADAAEAAMAAAD6/wAADAAEAAMAAAD7/wAADAAEAAMAAAD8/wAADAAEAAMAAAD9/wAADAAEAAMAAAD+/wAADAAEAAMAAAD//wAADAAEAAMAAAAAAAAADAAEAAMAAAABAAAADAAEAAMAAAACAAAADAAEAAMAAAAIAPf/DAAEAAMAAAAIAPj/DAAEAAMAAAAIAPn/DAAEAAMAAAAIAPr/DAAEAAMAAAAIAP7/DAAEAAMAAAAIAP//DAAEAAMAAAAIAAAADAAEAAMAAAAIAAEADAAEAAMAAAAIAAIADAAEAAMAAAAOAPn/DAAEAAMAAAAOAPr/DAAEAAMAAAAOAPv/DAAEAAMAAAAOAP//DAAEAAMAAAAOAAAADAAEAAMAAAAOAAEADAAEAAMAAAAOAAIADAAEAAMAAAATAPX/DAAEAAMAAAATAPb/DAAEAAMAAAATAPf/DAAEAAMAAAATAPj/DAAEAAMAAAATAPn/DAAEAAMAAAATAP3/DAAEAAMAAAATAP7/DAAEAAMAAAATAP//DAAEAAMAAAATAAAADAAEAAMAAAATAAEADAAEAAMAAAAaAPb/DAAEAAMAAAAaAPf/DAAEAAMAAAAaAPj/DAAEAAMAAAAaAPn/DAAEAAMAAAAaAPz/DAAEAAMAAAAaAP3/DAAEAAMAAAAaAP7/DAAEAAMAAAAaAP//DAAEAAMAAAAbAPn/DAAEAAMAAAAbAPz/DAAEAAMAAAAcAPz/DAAEAAMAAAAdAPj/DAAEAAMAAAAdAPz/DAAEAAMAAAAeAPj/DAAEAAMAAAAeAPv/DAAEAAMAAAAfAPv/DAAEAAMAAAAgAPf/DAADAAQAAAAhAPf/DAADAAQAAAAhAPr/DAADAAQAAAAiAPf/DAADAAQAAAAiAPr/DAADAAQAAAAjAPf/DAADAAQAAAAlAPz/DAADAAQAAAAmAPn/DAADAAQAAAAmAPz/DAADAAQAAAAnAPz/DAADAAQAAAApAPf/DAADAAQAAAAuAPz/DAAEAAMAAAAuAP3/DAAEAAMAAAAuAP7/DAAEAAMAAAAuAP//DAAEAAMAAAAuAAAADAAEAAMAAAAzAPr/DAAEAAMAAAAzAPv/DAAEAAMAAAAzAPz/DAAEAAMAAAAzAP3/DAAEAAMAAAA0APr/DAAEAAMAAAA0APv/DAAEAAMAAAA0AP3/DAAEAAMAAAA1APr/DAAEAAMAAAA1APv/DAAEAAMAAAA2APr/DAAEAAMAAAA2APv/DAAEAAMAAAADAAAADAAEAAMAAAAJAPf/DAAEAAMAAAAJAPj/DAAEAAMAAAAJAPn/DAAEAAMAAAAJAPr/DAAEAAMAAAAJAP7/DAAEAAMAAAAJAP//DAAEAAMAAAAJAAAADAAEAAMAAAAJAAEADAAEAAMAAAAJAAIADAAEAAMAAAAOAPj/DAAEAAMAAAAOAAMADAAEAAMAAAAPAPn/DAAEAAMAAAAPAPr/DAAEAAMAAAAPAPv/DAAEAAMAAAAPAP//DAAEAAMAAAAPAAAADAAEAAMAAAAPAAEADAAEAAMAAAAPAAIADAAEAAMAAAAUAPX/DAAEAAMAAAAUAPb/DAAEAAMAAAAUAPf/DAAEAAMAAAAUAPj/DAAEAAMAAAAUAPn/DAAEAAMAAAAUAP3/DAAEAAMAAAAUAP7/DAAEAAMAAAAUAP//DAAEAAMAAAAUAAAADAAEAAMAAAAUAAEADAAEAAMAAAAaAAAADAAEAAMAAAAbAPb/DAAEAAMAAAAbAPf/DAAEAAMAAAAbAPj/DAAEAAMAAAAbAP3/DAAEAAMAAAAbAP7/DAAEAAMAAAAbAP//DAAEAAMAAAAcAPn/DAAEAAMAAAAeAPz/DAAEAAMAAAAfAPj/DAAEAAMAAAAgAPv/DAADAAQAAAAjAPr/DAADAAQAAAAkAPf/DAADAAQAAAAkAPv/DAADAAQAAAAlAPj/DAADAAQAAAAnAPn/DAADAAQAAAAoAPj/DAADAAQAAAAoAPz/DAADAAQAAAApAPv/DAADAAQAAAAqAPf/DAADAAQAAAAqAPr/DAADAAQAAAAvAPz/DAAEAAMAAAAvAP3/DAAEAAMAAAAvAP7/DAAEAAMAAAAvAP//DAAEAAMAAAAvAAAADAAEAAMAAAAzAP7/DAAEAAMAAAAzAP//DAAEAAMAAAA0APz/DAAEAAMAAAA1AP3/DAAEAAMAAAA3APr/DAAEAAMAAAA3APv/DAAEAAMAAAA=")
 tile_set = SubResource("TileSet_fgtm3")
 
 [node name="Water" type="TileMapLayer" parent="TileMap"]
@@ -910,13 +1036,36 @@ shape = SubResource("WorldBoundaryShape2D_60f7k")
 
 [node name="Platforms" type="Node" parent="."]
 
+[node name="Door1" type="Node2D" parent="Platforms"]
+z_index = -1
+position = Vector2(128, -80)
+script = ExtResource("22_io455")
+
+[node name="Platform1" parent="Platforms/Door1" instance=ExtResource("22_uyomx")]
+position = Vector2(0, 32)
+
+[node name="Platform2" parent="Platforms/Door1" instance=ExtResource("22_uyomx")]
+
+[node name="Platform3" parent="Platforms/Door1" instance=ExtResource("22_uyomx")]
+position = Vector2(0, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Door1"]
+libraries = {
+&"": SubResource("AnimationLibrary_suy3i")
+}
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Ghost1" parent="Enemies" instance=ExtResource("22_lc5pf")]
 position = Vector2(588, -74)
 
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource("25_0n65g")]
+position = Vector2(32, -16)
+
 [node name="NextLevelDoor" parent="." instance=ExtResource("20_kqkch")]
-position = Vector2(-81, 0)
+position = Vector2(-80, 0)
 
 [node name="EntrenceDoor" type="Sprite2D" parent="."]
 position = Vector2(-18, -33)
@@ -925,5 +1074,5 @@ centered = false
 region_enabled = true
 region_rect = Rect2(-2, 0, 34, 33)
 
-[node name="Button" parent="." instance=ExtResource("25_0n65g")]
-position = Vector2(32, -16)
+[connection signal="off" from="Buttons/Button" to="Platforms/Door1" method="_on_button_off"]
+[connection signal="on" from="Buttons/Button" to="Platforms/Door1" method="_on_button_on"]
