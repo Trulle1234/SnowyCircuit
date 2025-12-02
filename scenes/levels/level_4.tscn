@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://btvsgs4mlb1y"]
+[gd_scene load_steps=95 format=4 uid="uid://btvsgs4mlb1y"]
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_05se8"]
 [ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_12cdj"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://jq3g6u0po41k" path="res://scenes/dark_ghost.tscn" id="26_8hw10"]
 [ext_resource type="PackedScene" uid="uid://gdl5w12ph8w4" path="res://scenes/darker_one_way_platform.tscn" id="27_dorgx"]
 [ext_resource type="Texture2D" uid="uid://dxdo82yessbbp" path="res://assets/sprites/misc/Doors_Dark.png" id="28_suy3i"]
+[ext_resource type="Script" uid="uid://br7yo8ug35b2y" path="res://scripts/cave.gd" id="32_dorgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syeym"]
 texture = ExtResource("6_uyomx")
@@ -1383,6 +1384,21 @@ _data = {
 &"door2_open": SubResource("Animation_8hw10")
 }
 
+[sub_resource type="Animation" id="Animation_jky1q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1192, -220)]
+}
+
 [sub_resource type="Animation" id="Animation_4aa1a"]
 resource_name = "dark_platform1_move"
 length = 4.0
@@ -1400,7 +1416,13 @@ tracks/0/keys = {
 "values": [Vector2(1192, -220), Vector2(1400, -220)]
 }
 
-[sub_resource type="Animation" id="Animation_jky1q"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbwwd"]
+_data = {
+&"RESET": SubResource("Animation_jky1q"),
+&"dark_platform1_move": SubResource("Animation_4aa1a")
+}
+
+[sub_resource type="Animation" id="Animation_y0jd0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1412,13 +1434,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1192, -220)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbwwd"]
-_data = {
-&"RESET": SubResource("Animation_jky1q"),
-&"dark_platform1_move": SubResource("Animation_4aa1a")
+"values": [Vector2(1768, -236)]
 }
 
 [sub_resource type="Animation" id="Animation_dorgx"]
@@ -1438,26 +1454,14 @@ tracks/0/keys = {
 "values": [Vector2(1768, -236), Vector2(1768, -124)]
 }
 
-[sub_resource type="Animation" id="Animation_y0jd0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1768, -236)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4luak"]
 _data = {
 &"RESET": SubResource("Animation_y0jd0"),
 &"dark_platform3_move": SubResource("Animation_dorgx")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0jd0"]
+size = Vector2(2304, 576)
 
 [node name="Level4" type="Node2D"]
 
@@ -1837,7 +1841,18 @@ centered = false
 region_enabled = true
 region_rect = Rect2(-2, 0, 34, 33)
 
+[node name="Cave" type="Area2D" parent="."]
+position = Vector2(400, -31)
+collision_mask = 2
+script = ExtResource("32_dorgx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave"]
+position = Vector2(320, -97)
+shape = SubResource("RectangleShape2D_y0jd0")
+
 [connection signal="off" from="Buttons/Button1" to="Platforms/Door1" method="_on_button_1_off"]
 [connection signal="on" from="Buttons/Button1" to="Platforms/Door1" method="_on_button_1_on"]
 [connection signal="off" from="Buttons/Button2" to="Platforms/Door2" method="_on_button_2_off"]
 [connection signal="on" from="Buttons/Button2" to="Platforms/Door2" method="_on_button_2_on"]
+[connection signal="body_entered" from="Cave" to="Cave" method="_on_body_entered"]
+[connection signal="body_exited" from="Cave" to="Cave" method="_on_body_exited"]
