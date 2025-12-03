@@ -854,7 +854,7 @@ autoplay = "dark_platform3_move"
 [node name="DarkerOneWayPlatform4" parent="Platforms" instance=ExtResource("23_1a10c")]
 position = Vector2(1352, -43)
 
-[node name="DarkerOneWayPlatform5" parent="Platforms" instance=ExtResource("23_1a10c")]
+[node name="OneWayPlatform3" parent="Platforms" instance=ExtResource("20_sbygb")]
 position = Vector2(1656, -203)
 
 [node name="Enemies" type="Node" parent="."]
