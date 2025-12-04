@@ -210,6 +210,8 @@ shape = SubResource("CircleShape2D_ssuvv")
 
 [node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_11l1o")
+max_distance = 4096.0
+attenuation = 1e-05
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
