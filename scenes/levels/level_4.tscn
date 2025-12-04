@@ -1627,9 +1627,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Killzone" parent="." instance=ExtResource("19_fgtm3")]
-position = Vector2(0, 141)
+position = Vector2(0, 53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 65)
 shape = SubResource("WorldBoundaryShape2D_60f7k")
 
 [node name="Lava" type="Node" parent="."]
