@@ -71,7 +71,14 @@ theme_override_font_sizes/font_size = 64
 text = "00:00.0"
 
 [node name="Timer" type="Timer" parent="Control/TimerMargin"]
-wait_time = 0.009999999999999998
+wait_time = 0.00999999999999999
 autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="timeout" from="Control/TimerMargin/Timer" to="Control/TimerMargin" method="_on_timer_timeout"]
