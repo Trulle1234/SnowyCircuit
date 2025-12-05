@@ -933,9 +933,6 @@ shape = SubResource("WorldBoundaryShape2D_ca42v")
 
 [node name="Conis" type="Node" parent="."]
 
-[node name="Coin1" parent="Conis" instance=ExtResource("20_2to4m")]
-position = Vector2(-168, 56)
-
 [node name="Coin2" parent="Conis" instance=ExtResource("20_2to4m")]
 position = Vector2(40, -24)
 
