@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=4 uid="uid://btvsgs4mlb1y"]
+[gd_scene load_steps=95 format=4 uid="uid://btvsgs4mlb1y"]
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_05se8"]
 [ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_12cdj"]
@@ -324,137 +324,6 @@ sources/11 = SubResource("TileSetAtlasSource_fwhj0")
 sources/12 = SubResource("TileSetAtlasSource_206ib")
 sources/13 = SubResource("TileSetAtlasSource_owuur")
 sources/14 = SubResource("TileSetAtlasSource_ymi8l")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ub4u"]
-texture = ExtResource("18_r3huh")
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-11:1/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-11:2/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-15:3/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-11:4/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-15:7/0 = 0
-16:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-4:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ouffm"]
-texture = ExtResource("6_uyomx")
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-11:1/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-11:2/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-12:3/0 = 0
-13:3/0 = 0
-15:3/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-11:4/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-11:5/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-11:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-4:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_kf1p5"]
-sources/0 = SubResource("TileSetAtlasSource_7ub4u")
-sources/1 = SubResource("TileSetAtlasSource_ouffm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0n65g"]
 texture = ExtResource("6_uyomx")
@@ -1303,46 +1172,97 @@ sources/12 = SubResource("TileSetAtlasSource_e7jjn")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_60f7k"]
 distance = 65.0
 
-[sub_resource type="Animation" id="Animation_io455"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_4luak"]
+resource_name = "door1_open"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Platform2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Platform3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 16)]
-}
-
-[sub_resource type="Animation" id="Animation_suy3i"]
-resource_name = "door1_close"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Platform3:position")
+tracks/0/path = NodePath("Platform1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -32), Vector2(0, 16)]
+"values": [Vector2(0, 32), Vector2(0, -16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 16), Vector2(0, -32)]
+}
+
+[sub_resource type="Animation" id="Animation_6b6qc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_lbwwd"]
+resource_name = "door1_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -16), Vector2(0, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1356,39 +1276,24 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, -48), Vector2(0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_uyomx"]
-resource_name = "door1_open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Platform2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -48)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Platform3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 16), Vector2(0, -32)]
+"values": [Vector2(0, -32), Vector2(0, 16)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_suy3i"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgtm3"]
 _data = {
-&"RESET": SubResource("Animation_io455"),
-&"door1_close": SubResource("Animation_suy3i"),
-&"door1_open": SubResource("Animation_uyomx")
+&"RESET": SubResource("Animation_6b6qc"),
+&"door1_close": SubResource("Animation_lbwwd"),
+&"door1_open": SubResource("Animation_4luak")
 }
 
 [sub_resource type="Animation" id="Animation_1s8bw"]
@@ -1682,11 +1587,6 @@ centered = false
 tile_set = SubResource("TileSet_7iwft")
 format = 2
 
-[node name="PillarBack" type="TileMapLayer" parent="TileMap"]
-z_index = -1
-tile_map_data = PackedByteArray("AAAIAPr/AAADAAIAAAAIAPv/AAADAAIAAAAIAPz/AAADAAIAAAAIAP3/AAADAAIAAAAJAPr/AAAFAAIAAAAJAPv/AAAFAAIAAAAJAPz/AAAFAAIAAAAJAP3/AAAFAAIAAAAPAPv/AAAFAAIAAAAPAPz/AAAFAAIAAAAPAP3/AAAFAAIAAAAPAP7/AAAFAAIAAAAOAPv/AAADAAIAAAAOAPz/AAADAAIAAAAOAP3/AAADAAIAAAAOAP7/AAADAAIAAAATAPn/AAADAAIAAAATAPr/AAADAAIAAAATAPv/AAADAAIAAAATAPz/AAADAAIAAAAUAPn/AAAFAAIAAAAUAPr/AAAFAAIAAAAUAPv/AAAFAAIAAAAUAPz/AAAFAAIAAABHAPL/AAADAAIAAABHAPP/AAADAAIAAABHAPT/AAADAAIAAABIAPL/AAAFAAIAAABIAPP/AAAFAAIAAABIAPT/AAAFAAIAAAA=")
-tile_set = SubResource("TileSet_kf1p5")
-
 [node name="Back" type="TileMapLayer" parent="TileMap"]
 z_index = -4096
 use_parent_material = true
@@ -1879,7 +1779,7 @@ position = Vector2(0, 16)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Door1"]
 libraries = {
-&"": SubResource("AnimationLibrary_suy3i")
+&"": SubResource("AnimationLibrary_fgtm3")
 }
 
 [node name="Door2" type="Node2D" parent="Platforms"]
