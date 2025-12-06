@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://tvflro120lyo"]
+[gd_scene load_steps=90 format=4 uid="uid://tvflro120lyo"]
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_5kbkd"]
 [ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_u1mn7"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://cmcbjd5n56gt3" path="res://scenes/killzone.tscn" id="19_5j4t6"]
 [ext_resource type="Texture2D" uid="uid://cv2nr3h2tlypg" path="res://assets/sprites/misc/Black_Background.png" id="19_u1mn7"]
 [ext_resource type="PackedScene" uid="uid://dg08kt21nmq5w" path="res://scenes/coin.tscn" id="20_jskkq"]
-[ext_resource type="FontFile" uid="uid://dgkb7afoeic48" path="res://assets/fonts/monogram-extended-italic.ttf" id="22_gnwwf"]
 [ext_resource type="PackedScene" uid="uid://b10pg1rr7fut0" path="res://scenes/ghost.tscn" id="23_3j2bn"]
 [ext_resource type="PackedScene" uid="uid://cvah5ho4hpoic" path="res://scenes/one_way_platform.tscn" id="23_lolfx"]
 [ext_resource type="PackedScene" uid="uid://b8f5yjbjgkfn3" path="res://scenes/next_level_door.tscn" id="23_q14mj"]
@@ -31,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://csjnpoyr5vkke" path="res://assets/sprites/misc/Doors.png" id="24_k17je"]
 [ext_resource type="PackedScene" uid="uid://ckokny0nf44h7" path="res://scenes/button.tscn" id="25_004to"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y24n2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0v1o"]
 texture = ExtResource("6_nrec3")
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -138,7 +137,7 @@ texture = ExtResource("6_nrec3")
 6:8/0 = 0
 6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1vib"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idth2"]
 texture = ExtResource("7_u88kh")
 9:1/0 = 0
 10:1/0 = 0
@@ -155,38 +154,38 @@ texture = ExtResource("7_u88kh")
 3:5/size_in_atlas = Vector2i(2, 1)
 3:5/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8njs3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gg75w"]
 texture = ExtResource("8_jrosa")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1rry"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1pyt"]
 texture = ExtResource("9_sbc0t")
 0:0/size_in_atlas = Vector2i(18, 13)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw3il"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4lb3"]
 texture = ExtResource("5_j5pwc")
 0:9/size_in_atlas = Vector2i(18, 3)
 0:9/0 = 0
 0:12/size_in_atlas = Vector2i(18, 1)
 0:12/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ssta"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ninaw"]
 texture = ExtResource("4_mnrma")
 0:8/size_in_atlas = Vector2i(18, 5)
 0:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynk0j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2vq5a"]
 texture = ExtResource("3_cijsf")
 0:0/size_in_atlas = Vector2i(18, 12)
 0:0/0 = 0
 0:12/size_in_atlas = Vector2i(18, 1)
 0:12/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84knd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ieqpx"]
 texture = ExtResource("10_wgn3r")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -218,7 +217,7 @@ texture = ExtResource("10_wgn3r")
 2:1/0 = 0
 0:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgitf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ips30"]
 texture = ExtResource("11_p5exd")
 0:0/0 = 0
 1:0/0 = 0
@@ -229,21 +228,21 @@ texture = ExtResource("11_p5exd")
 2:1/0 = 0
 3:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3y2j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofbdg"]
 texture = ExtResource("12_uucwl")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4cop"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjfic"]
 texture = ExtResource("13_l4icv")
 0:0/size_in_atlas = Vector2i(7, 6)
 0:0/0 = 0
 8:0/size_in_atlas = Vector2i(7, 6)
 8:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5nxt"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8o2j"]
 texture = ExtResource("14_g5cqv")
 0:0/0 = 0
 1:0/0 = 0
@@ -254,7 +253,7 @@ texture = ExtResource("14_g5cqv")
 2:1/0 = 0
 3:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwci2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s80yp"]
 texture = ExtResource("15_djvkm")
 0:0/0 = 0
 3:0/0 = 0
@@ -291,11 +290,11 @@ texture = ExtResource("15_djvkm")
 12:2/0 = 0
 13:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xq7xt"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xqkqj"]
 texture = ExtResource("16_y0ury")
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uk37s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ywvvp"]
 texture = ExtResource("17_ix2r8")
 6:2/0 = 0
 3:1/size_in_atlas = Vector2i(3, 2)
@@ -307,21 +306,21 @@ texture = ExtResource("17_ix2r8")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 4
 physics_layer_1/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_y24n2")
-sources/1 = SubResource("TileSetAtlasSource_s1vib")
-sources/2 = SubResource("TileSetAtlasSource_84knd")
-sources/3 = SubResource("TileSetAtlasSource_lgitf")
-sources/4 = SubResource("TileSetAtlasSource_c3y2j")
-sources/5 = SubResource("TileSetAtlasSource_y4cop")
-sources/6 = SubResource("TileSetAtlasSource_y5nxt")
-sources/7 = SubResource("TileSetAtlasSource_rwci2")
-sources/8 = SubResource("TileSetAtlasSource_xq7xt")
-sources/9 = SubResource("TileSetAtlasSource_uk37s")
-sources/10 = SubResource("TileSetAtlasSource_8njs3")
-sources/11 = SubResource("TileSetAtlasSource_f1rry")
-sources/12 = SubResource("TileSetAtlasSource_hw3il")
-sources/13 = SubResource("TileSetAtlasSource_5ssta")
-sources/14 = SubResource("TileSetAtlasSource_ynk0j")
+sources/0 = SubResource("TileSetAtlasSource_e0v1o")
+sources/1 = SubResource("TileSetAtlasSource_idth2")
+sources/2 = SubResource("TileSetAtlasSource_ieqpx")
+sources/3 = SubResource("TileSetAtlasSource_ips30")
+sources/4 = SubResource("TileSetAtlasSource_ofbdg")
+sources/5 = SubResource("TileSetAtlasSource_wjfic")
+sources/6 = SubResource("TileSetAtlasSource_d8o2j")
+sources/7 = SubResource("TileSetAtlasSource_s80yp")
+sources/8 = SubResource("TileSetAtlasSource_xqkqj")
+sources/9 = SubResource("TileSetAtlasSource_ywvvp")
+sources/10 = SubResource("TileSetAtlasSource_gg75w")
+sources/11 = SubResource("TileSetAtlasSource_n1pyt")
+sources/12 = SubResource("TileSetAtlasSource_t4lb3")
+sources/13 = SubResource("TileSetAtlasSource_ninaw")
+sources/14 = SubResource("TileSetAtlasSource_2vq5a")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cijsf"]
 texture = ExtResource("6_nrec3")
@@ -1506,6 +1505,7 @@ tile_map_data = PackedByteArray("AADO/wQACgAAAAAAAADO/wUACgAAAAEAAADO/wYACgAAAAE
 tile_set = SubResource("TileSet_y1ysa")
 
 [node name="Player" parent="." instance=ExtResource("18_w2ohj")]
+position = Vector2(0, 16)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -13)
@@ -1659,20 +1659,6 @@ texture = ExtResource("24_k17je")
 centered = false
 region_enabled = true
 region_rect = Rect2(-2, 0, 34, 33)
-
-[node name="Label" type="Label" parent="."]
-offset_left = -192.0
-offset_top = -88.0
-offset_right = 144.0
-offset_bottom = 25.0
-theme_override_colors/font_color = Color(0.105882354, 0.078431375, 0.11764706, 1)
-theme_override_fonts/font = ExtResource("22_gnwwf")
-theme_override_font_sizes/font_size = 16
-text = "You have reached 
-the end of this short beta, 
-walk though that 
-door to return to level 1"
-horizontal_alignment = 1
 
 [connection signal="off" from="Buttons/Button1" to="Platforms/Door3" method="_on_button_1_off"]
 [connection signal="on" from="Buttons/Button1" to="Platforms/Door3" method="_on_button_1_on"]
