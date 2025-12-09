@@ -24,6 +24,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 	next_level_path = FILE_BEGIN + str(level_number + 1) + ".tscn"
 
+	scene.get_node("UI").get_node("Control/TimerMargin/Timer").stop()
+	GameManager.level_times.append(scene.get_node("UI").get_node("Control/TimerMargin/Label").text)
+	
 	body.is_dead = true
 	body.velocity.x = 0
 	
@@ -42,5 +45,4 @@ func _on_timer_timeout() -> void:
 	if ResourceLoader.exists(next_level_path):
 		get_tree().change_scene_to_file(next_level_path)
 	else:
-		
-		get_tree().change_scene_to_file(FILE_BEGIN + "1.tscn")
+		get_tree().change_scene_to_file("res://scenes/win.tscn")

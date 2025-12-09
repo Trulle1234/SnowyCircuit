@@ -8,6 +8,8 @@ var has_moved = false
 var fullscreen = false
 var show_mouse = false
 
+var level_times = []
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
