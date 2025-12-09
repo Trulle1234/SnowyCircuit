@@ -32,7 +32,7 @@ func get_level_times(level_times=GameManager.level_times):
 	var string = ""
 	
 	for i in range(len(level_times)):
-		string += ("Level " + str(i + 2) + ": "
+		string += ("Level " + str(i + 1) + ": "
 			+ level_times[i] + "\n"
 		)
 	return string
