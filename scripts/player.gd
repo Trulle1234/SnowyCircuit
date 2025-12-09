@@ -16,6 +16,9 @@ var coyote_time_active: bool = false
 
 var is_dead: bool = false
 
+func _ready() -> void:
+	animated_sprite.material.set_shader_parameter("active", false)
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += GRAVITY * delta
