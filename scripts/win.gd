@@ -14,15 +14,15 @@ func _ready() -> void:
 	
 	for i in range(len(text)):
 		label.text += text[i]
-		tap.pitch_scale = randf_range(0.5, 1.5)
+		tap.pitch_scale = randf_range(0.7, 1.5)
 		tap.play()
 		await wait(0.05)
-
+		
 func get_text(base_text):
 	var text = (
 		base_text + "\n"
 		+ "Coins: " + str(GameManager.coins) + "\n\n"
-		+ "Times:\n"
+		+ "Level times:\n"
 		+ get_level_times()
 	)
 	
