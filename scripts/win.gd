@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var label: Label = $Label
+@onready var control: Control = $Control
+@onready var label: Label = $Control/Label
 @onready var tap: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 const BASE_TEXT = """
@@ -8,8 +9,8 @@ You Have Compleated this small game.
 Thank you loads for playing! 
 Here are your stats:
 """
-	
-func _ready() -> void:
+
+func _ready() -> void:	
 	var text = get_text(BASE_TEXT)
 	
 	for i in range(len(text)):
