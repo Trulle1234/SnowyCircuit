@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b10pg1rr7fut0"]
 
-[ext_resource type="Texture2D" uid="uid://djhw7l3cjtpt1" path="res://assets/sprites/characters/10 - Blankey_Floating (32 x 32).png" id="1_6attn"]
+[ext_resource type="Texture2D" uid="uid://djhw7l3cjtpt1" path="res://assets/sprites/characters/Blankey/10 - Blankey_Floating (32 x 32).png" id="1_6attn"]
 [ext_resource type="Script" uid="uid://bxxhd2nybltax" path="res://scripts/ghost.gd" id="1_bbnym"]
 [ext_resource type="PackedScene" uid="uid://cmcbjd5n56gt3" path="res://scenes/killzone.tscn" id="2_obmiq"]
 

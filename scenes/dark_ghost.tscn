@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://jq3g6u0po41k"]
 
 [ext_resource type="Script" uid="uid://bxxhd2nybltax" path="res://scripts/ghost.gd" id="1_p27c5"]
-[ext_resource type="Texture2D" uid="uid://b845tl3h4ikfg" path="res://assets/sprites/characters/10 - Dark_Blankey_Floating (32 x 32).png" id="2_p27c5"]
+[ext_resource type="Texture2D" uid="uid://b845tl3h4ikfg" path="res://assets/sprites/characters/Blankey/10 - Dark_Blankey_Floating (32 x 32).png" id="2_p27c5"]
 [ext_resource type="PackedScene" uid="uid://cmcbjd5n56gt3" path="res://scenes/killzone.tscn" id="3_fetek"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hjxn"]
