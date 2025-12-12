@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c0klld1gqpkhr"]
+[gd_scene load_steps=30 format=3 uid="uid://c0klld1gqpkhr"]
 
 [ext_resource type="Texture2D" uid="uid://bevjn0j3m5ucs" path="res://assets/sprites/characters/Grizzly/Attack_(48 x 32).png" id="1_h7gg4"]
 [ext_resource type="Script" uid="uid://cfs1fi570x2at" path="res://scripts/bear.gd" id="1_r4uyl"]
@@ -146,8 +146,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_a5djg"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_h7gg4"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -161,8 +161,23 @@ tracks/0/keys = {
 "values": [&"idle"]
 }
 
-[sub_resource type="Animation" id="Animation_h7gg4"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_x34g0"]
+resource_name = "atack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"atack"]
+}
+
+[sub_resource type="Animation" id="Animation_a5djg"]
+resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -222,21 +237,6 @@ tracks/0/keys = {
 "values": [&"walk"]
 }
 
-[sub_resource type="Animation" id="Animation_x34g0"]
-resource_name = "atack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"atack"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0f2y1"]
 _data = {
 &"RESET": SubResource("Animation_h7gg4"),
@@ -247,52 +247,15 @@ _data = {
 &"walk": SubResource("Animation_5084r")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r4uyl"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a5djg"]
-animation = &"sleep"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7gg4"]
-animation = &"wake_up"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r4uyl"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a5djg"]
-advance_mode = 2
-advance_condition = &"wake_up"
-advance_expression = "!sleep"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0f2y1"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5084r"]
-states/Start/position = Vector2(182, 100)
-states/idle/node = SubResource("AnimationNodeAnimation_r4uyl")
-states/idle/position = Vector2(617, 93)
-states/sleep/node = SubResource("AnimationNodeAnimation_a5djg")
-states/sleep/position = Vector2(324, 93)
-states/wake_up/node = SubResource("AnimationNodeAnimation_h7gg4")
-states/wake_up/position = Vector2(487, 93)
-transitions = ["Start", "sleep", SubResource("AnimationNodeStateMachineTransition_r4uyl"), "sleep", "wake_up", SubResource("AnimationNodeStateMachineTransition_a5djg"), "wake_up", "idle", SubResource("AnimationNodeStateMachineTransition_0f2y1")]
-
 [node name="Bear" type="Node2D"]
 script = ExtResource("1_r4uyl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_msjsf")
 animation = &"idle"
-frame_progress = 0.6805843
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_0f2y1")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_5084r")
-anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/wake_up = false
