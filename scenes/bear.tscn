@@ -1,0 +1,298 @@
+[gd_scene load_steps=37 format=3 uid="uid://c0klld1gqpkhr"]
+
+[ext_resource type="Texture2D" uid="uid://bevjn0j3m5ucs" path="res://assets/sprites/characters/Grizzly/Attack_(48 x 32).png" id="1_h7gg4"]
+[ext_resource type="Script" uid="uid://cfs1fi570x2at" path="res://scripts/bear.gd" id="1_r4uyl"]
+[ext_resource type="Texture2D" uid="uid://ojkd6qkf6cq5" path="res://assets/sprites/characters/Grizzly/Idle_(48 x 32).png" id="2_r4uyl"]
+[ext_resource type="Texture2D" uid="uid://darkrcjyro87e" path="res://assets/sprites/characters/Grizzly/Sleeping_&_Wakeup_(48 x 32).png" id="3_0f2y1"]
+[ext_resource type="Texture2D" uid="uid://cxl6lt4m8xxcv" path="res://assets/sprites/characters/Grizzly/Walking_(48 x 32).png" id="4_5084r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5djg"]
+atlas = ExtResource("1_h7gg4")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7gg4"]
+atlas = ExtResource("1_h7gg4")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4uyl"]
+atlas = ExtResource("1_h7gg4")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f2y1"]
+atlas = ExtResource("1_h7gg4")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5084r"]
+atlas = ExtResource("1_h7gg4")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x34g0"]
+atlas = ExtResource("2_r4uyl")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_052ee"]
+atlas = ExtResource("3_0f2y1")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5ilv"]
+atlas = ExtResource("3_0f2y1")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm6re"]
+atlas = ExtResource("3_0f2y1")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwa67"]
+atlas = ExtResource("3_0f2y1")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym5xy"]
+atlas = ExtResource("4_5084r")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lanjd"]
+atlas = ExtResource("4_5084r")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0jw8"]
+atlas = ExtResource("4_5084r")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypjxv"]
+atlas = ExtResource("4_5084r")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejuj0"]
+atlas = ExtResource("4_5084r")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eblmn"]
+atlas = ExtResource("4_5084r")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msjsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5djg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7gg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4uyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f2y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5084r")
+}],
+"loop": true,
+"name": &"atack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x34g0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_052ee")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5ilv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm6re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwa67")
+}],
+"loop": true,
+"name": &"wake_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym5xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lanjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0jw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypjxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejuj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eblmn")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_a5djg"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_h7gg4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_r4uyl"]
+resource_name = "sleep"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"sleep"]
+}
+
+[sub_resource type="Animation" id="Animation_0f2y1"]
+resource_name = "wake_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"wake_up"]
+}
+
+[sub_resource type="Animation" id="Animation_5084r"]
+resource_name = "walk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+
+[sub_resource type="Animation" id="Animation_x34g0"]
+resource_name = "atack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"atack"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0f2y1"]
+_data = {
+&"RESET": SubResource("Animation_h7gg4"),
+&"atack": SubResource("Animation_x34g0"),
+&"idle": SubResource("Animation_a5djg"),
+&"sleep": SubResource("Animation_r4uyl"),
+&"wake_up": SubResource("Animation_0f2y1"),
+&"walk": SubResource("Animation_5084r")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r4uyl"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a5djg"]
+animation = &"sleep"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7gg4"]
+animation = &"wake_up"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r4uyl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a5djg"]
+advance_mode = 2
+advance_condition = &"wake_up"
+advance_expression = "!sleep"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0f2y1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5084r"]
+states/Start/position = Vector2(182, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_r4uyl")
+states/idle/position = Vector2(617, 93)
+states/sleep/node = SubResource("AnimationNodeAnimation_a5djg")
+states/sleep/position = Vector2(324, 93)
+states/wake_up/node = SubResource("AnimationNodeAnimation_h7gg4")
+states/wake_up/position = Vector2(487, 93)
+transitions = ["Start", "sleep", SubResource("AnimationNodeStateMachineTransition_r4uyl"), "sleep", "wake_up", SubResource("AnimationNodeStateMachineTransition_a5djg"), "wake_up", "idle", SubResource("AnimationNodeStateMachineTransition_0f2y1")]
+
+[node name="Bear" type="Node2D"]
+script = ExtResource("1_r4uyl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_msjsf")
+animation = &"idle"
+frame_progress = 0.6805843
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0f2y1")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_5084r")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/wake_up = false

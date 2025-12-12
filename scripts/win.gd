@@ -10,7 +10,7 @@ Thank you loads for playing!
 Here are your stats:
 """
 
-func _ready() -> void:	
+func _ready() -> void:
 	var text = get_text(BASE_TEXT)
 	
 	for i in range(len(text)):
