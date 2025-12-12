@@ -1073,6 +1073,21 @@ _data = {
 &"door1_open": SubResource("Animation_4luak")
 }
 
+[sub_resource type="Animation" id="Animation_e8x4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1880, -60)]
+}
+
 [sub_resource type="Animation" id="Animation_qydmw"]
 resource_name = "platform4_move"
 length = 2.0
@@ -1090,25 +1105,25 @@ tracks/0/keys = {
 "values": [Vector2(1880, -60), Vector2(1992, -60)]
 }
 
-[sub_resource type="Animation" id="Animation_e8x4w"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lj5qo"]
+_data = {
+&"RESET": SubResource("Animation_e8x4w"),
+&"platform4_move": SubResource("Animation_qydmw")
+}
+
+[sub_resource type="Animation" id="Animation_00rsc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Platforms/OneWayPlatform5:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1880, -60)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lj5qo"]
-_data = {
-&"RESET": SubResource("Animation_e8x4w"),
-&"platform4_move": SubResource("Animation_qydmw")
+"values": [Vector2(1992, -76)]
 }
 
 [sub_resource type="Animation" id="Animation_rn25u"]
@@ -1126,21 +1141,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1992, -76), Vector2(1992, -124)]
-}
-
-[sub_resource type="Animation" id="Animation_00rsc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Platforms/OneWayPlatform5:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1992, -76)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_biocx"]
