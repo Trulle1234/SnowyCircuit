@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 const BASE_SPEED = 130.0
 const CROUCH_SPEED = 1.0
+const SLOW_SPEED = 60
 const JUMP_VELOCITY = -300.0
 const GRAVITY = Vector2(0, 980.0)
 
 var speed = BASE_SPEED
+var slow = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -18,6 +20,9 @@ var is_dead: bool = false
 
 func _ready() -> void:
 	animated_sprite.material.set_shader_parameter("active", false)
+		
+	if slow:
+		speed = SLOW_SPEED
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -42,7 +47,10 @@ func _physics_process(delta: float) -> void:
 				position.y += 3
 				
 			else:
-				speed = BASE_SPEED
+				if slow:
+					speed = SLOW_SPEED
+				else:
+					speed = BASE_SPEED
 				
 				if direction == 0:
 					animated_sprite.play("idle")
