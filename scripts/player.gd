@@ -5,9 +5,12 @@ const CROUCH_SPEED = 1.0
 const SLOW_SPEED = 60
 const JUMP_VELOCITY = -300.0
 const GRAVITY = Vector2(0, 980.0)
+const KNOCKBACK_DURATION = 0.30
 
 var speed = BASE_SPEED
 var slow = false
+
+var knockback_time = 0.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -23,8 +26,10 @@ func _ready() -> void:
 		
 	if slow:
 		speed = SLOW_SPEED
-
+		
 func _physics_process(delta: float) -> void:
+	knockback_time = maxf(knockback_time - delta, 0.0)
+	
 	if not is_on_floor():
 		velocity += GRAVITY * delta
 
@@ -80,10 +85,22 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			coyote_timer.stop()
 			coyote_time_active = true
-			
-		if direction:
-			velocity.x = direction * speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
 
-	move_and_slide()
+		if knockback_time <= 0.0:
+			if direction:
+				velocity.x = direction * speed
+			else:
+				velocity.x = move_toward(velocity.x, 0, speed)
+		else:
+			velocity.x = move_toward(velocity.x, 0, 800 * delta)
+
+		move_and_slide()
+
+func apply_knockback(from_position: Vector2, strength_x, strength_y) -> void:
+	var dir: float = sign(global_position.x - from_position.x)
+	if dir == 0:
+		dir = 1
+
+	velocity.x = dir * strength_x
+	velocity.y = -strength_y
+	knockback_time = KNOCKBACK_DURATION
