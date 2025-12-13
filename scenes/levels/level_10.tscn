@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://bgglqusn5fu3k"]
+[gd_scene load_steps=65 format=4 uid="uid://bgglqusn5fu3k"]
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_omffp"]
 [ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_7pxtr"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://cmcbjd5n56gt3" path="res://scenes/killzone.tscn" id="19_lya4r"]
 [ext_resource type="PackedScene" uid="uid://b8f5yjbjgkfn3" path="res://scenes/next_level_door.tscn" id="20_cahp0"]
 [ext_resource type="Texture2D" uid="uid://csjnpoyr5vkke" path="res://assets/sprites/misc/Doors.png" id="21_21y8e"]
+[ext_resource type="PackedScene" uid="uid://c5ir2p247yl0x" path="res://scenes/platform.tscn" id="22_nk72f"]
+[ext_resource type="Script" uid="uid://bv3qprkc70thj" path="res://scripts/door_5.gd" id="22_vxf3i"]
 [ext_resource type="PackedScene" uid="uid://c0klld1gqpkhr" path="res://scenes/bear.tscn" id="24_cqrih"]
 [ext_resource type="PackedScene" uid="uid://dxyvd0g6qf2f7" path="res://scenes/slowzone.tscn" id="25_odo46"]
 
@@ -744,6 +746,94 @@ sources/12 = SubResource("TileSetAtlasSource_yy4hl")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_irlr6"]
 distance = 65.0
 
+[sub_resource type="Animation" id="Animation_vxf3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nk72f"]
+resource_name = "door1_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, -32), Vector2(16, -96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, 0), Vector2(16, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_657iy"]
+resource_name = "door1_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, -64), Vector2(16, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, -96), Vector2(16, -32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_657iy"]
+_data = {
+&"RESET": SubResource("Animation_vxf3i"),
+&"door1_close": SubResource("Animation_nk72f"),
+&"door1_open": SubResource("Animation_657iy")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk72f"]
 size = Vector2(1288, 309)
 
@@ -907,10 +997,28 @@ shape = SubResource("WorldBoundaryShape2D_irlr6")
 
 [node name="Platforms" type="Node" parent="."]
 
+[node name="Door1" type="Node2D" parent="Platforms"]
+z_index = -1
+position = Vector2(913, 16)
+script = ExtResource("22_vxf3i")
+
+[node name="Platform1" parent="Platforms/Door1" instance=ExtResource("22_nk72f")]
+position = Vector2(16, -32)
+rotation = 1.5707964
+
+[node name="Platform2" parent="Platforms/Door1" instance=ExtResource("22_nk72f")]
+position = Vector2(16, 0)
+rotation = 1.5707964
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Door1"]
+libraries = {
+&"": SubResource("AnimationLibrary_657iy")
+}
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Bear" parent="Enemies" instance=ExtResource("24_cqrih")]
-position = Vector2(917, -48)
+position = Vector2(928, -48)
 
 [node name="Buttons" type="Node" parent="."]
 
@@ -930,3 +1038,5 @@ position = Vector2(-1, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slowzone"]
 position = Vector2(366, -96.5)
 shape = SubResource("RectangleShape2D_nk72f")
+
+[connection signal="start_sequence_done" from="Enemies/Bear" to="Platforms/Door1" method="_on_bear_start_sequence_done"]

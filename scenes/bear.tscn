@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://c0klld1gqpkhr"]
+[gd_scene load_steps=25 format=3 uid="uid://c0klld1gqpkhr"]
 
 [ext_resource type="Texture2D" uid="uid://bevjn0j3m5ucs" path="res://assets/sprites/characters/Grizzly/Attack_(48 x 32).png" id="1_h7gg4"]
 [ext_resource type="Script" uid="uid://cfs1fi570x2at" path="res://scripts/bear.gd" id="1_r4uyl"]
 [ext_resource type="Texture2D" uid="uid://ojkd6qkf6cq5" path="res://assets/sprites/characters/Grizzly/Idle_(48 x 32).png" id="2_r4uyl"]
 [ext_resource type="Texture2D" uid="uid://darkrcjyro87e" path="res://assets/sprites/characters/Grizzly/Sleeping_&_Wakeup_(48 x 32).png" id="3_0f2y1"]
 [ext_resource type="Texture2D" uid="uid://cxl6lt4m8xxcv" path="res://assets/sprites/characters/Grizzly/Walking_(48 x 32).png" id="4_5084r"]
-[ext_resource type="AudioStream" uid="uid://dtk8l11sk03b1" path="res://assets/sfx/snoring.wav" id="6_r4uyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5djg"]
 atlas = ExtResource("1_h7gg4")
@@ -89,8 +88,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5084r")
 }],
-"loop": true,
-"name": &"atack",
+"loop": false,
+"name": &"attack",
 "speed": 10.0
 }, {
 "frames": [{
@@ -151,7 +150,7 @@ animations = [{
 height = 32.000004
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7gg4"]
-size = Vector2(131, 74)
+size = Vector2(84.5, 42)
 
 [node name="Bear" type="CharacterBody2D"]
 collision_mask = 2
@@ -159,7 +158,7 @@ script = ExtResource("1_r4uyl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a5djg")
-animation = &"wake_up"
+animation = &"attack"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -171,14 +170,12 @@ shape = SubResource("CapsuleShape2D_a5djg")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-12.5, 18)
+position = Vector2(15.25, 11)
 shape = SubResource("RectangleShape2D_h7gg4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_r4uyl")
 volume_db = 2.0
-max_distance = 4096.0
-attenuation = 1.1095694e-05
+max_distance = 1000.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
