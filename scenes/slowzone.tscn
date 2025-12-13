@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxyvd0g6qf2f7"]
+
+[ext_resource type="Script" uid="uid://ef3gy7dvjnhe" path="res://slowzone.gd" id="1_lmbpk"]
+
+[node name="Slowzone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_lmbpk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

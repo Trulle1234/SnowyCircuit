@@ -3,7 +3,9 @@ extends AudioStreamPlayer2D
 @onready var timer: Timer = $Timer
 @onready var player: AudioStreamPlayer2D = $"."
 
-var tracks: Array[AudioStream] = [
+var play_fast_tracks = true
+
+var fast_tracks: Array[AudioStream] = [
 	preload("res://assets/music/fast/Bright.mp3"),
 	preload("res://assets/music/fast/Chimney.mp3"),
 	preload("res://assets/music/fast/Deck .mp3"),
@@ -16,6 +18,15 @@ var tracks: Array[AudioStream] = [
 	preload("res://assets/music/fast/Sleigh.mp3"),
 ]
 
+var calm_tracks: Array[AudioStream] = [
+	preload("res://assets/music/calm/Bedtime.mp3"),
+	preload("res://assets/music/calm/Cozy.mp3"),
+	preload("res://assets/music/calm/Night.mp3"),
+	preload("res://assets/music/calm/Snowy.mp3"),
+	preload("res://assets/music/calm/Wish.mp3"),
+
+]
+
 var last_index: int = -1
 var delay_between_tracks: float = 1.0 
 
@@ -24,9 +35,12 @@ func _ready() -> void:
 	player.finished.connect(_on_player_finished)
 	timer.timeout.connect(_on_timer_timeout)
 	
-	play_random_track()
-		
-func play_random_track() -> void:
+	if play_fast_tracks:
+		play_random_track(fast_tracks)
+	else:
+		play_random_track(calm_tracks)
+	
+func play_random_track(tracks) -> void:
 	if tracks.is_empty(): return
 	
 	var idx: int = randi() % tracks.size()
@@ -44,4 +58,7 @@ func _on_player_finished() -> void:
 	timer.start(delay_between_tracks)
 	
 func _on_timer_timeout() -> void:
-	play_random_track()
+	if play_fast_tracks:
+		play_random_track(fast_tracks)
+	else:
+		play_random_track(calm_tracks)

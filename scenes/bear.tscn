@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://c0klld1gqpkhr"]
+[gd_scene load_steps=26 format=3 uid="uid://c0klld1gqpkhr"]
 
 [ext_resource type="Texture2D" uid="uid://bevjn0j3m5ucs" path="res://assets/sprites/characters/Grizzly/Attack_(48 x 32).png" id="1_h7gg4"]
 [ext_resource type="Script" uid="uid://cfs1fi570x2at" path="res://scripts/bear.gd" id="1_r4uyl"]
 [ext_resource type="Texture2D" uid="uid://ojkd6qkf6cq5" path="res://assets/sprites/characters/Grizzly/Idle_(48 x 32).png" id="2_r4uyl"]
 [ext_resource type="Texture2D" uid="uid://darkrcjyro87e" path="res://assets/sprites/characters/Grizzly/Sleeping_&_Wakeup_(48 x 32).png" id="3_0f2y1"]
 [ext_resource type="Texture2D" uid="uid://cxl6lt4m8xxcv" path="res://assets/sprites/characters/Grizzly/Walking_(48 x 32).png" id="4_5084r"]
+[ext_resource type="AudioStream" uid="uid://dtk8l11sk03b1" path="res://assets/sfx/snoring.wav" id="6_r4uyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5djg"]
 atlas = ExtResource("1_h7gg4")
@@ -70,7 +71,7 @@ region = Rect2(192, 0, 48, 32)
 atlas = ExtResource("4_5084r")
 region = Rect2(240, 0, 48, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_msjsf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5djg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -118,7 +119,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iwa67")
 }],
-"loop": true,
+"loop": false,
 "name": &"wake_up",
 "speed": 5.0
 }, {
@@ -146,116 +147,38 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_h7gg4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5djg"]
+height = 32.000004
 
-[sub_resource type="Animation" id="Animation_x34g0"]
-resource_name = "atack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"atack"]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7gg4"]
+size = Vector2(131, 74)
 
-[sub_resource type="Animation" id="Animation_a5djg"]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-
-[sub_resource type="Animation" id="Animation_r4uyl"]
-resource_name = "sleep"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"sleep"]
-}
-
-[sub_resource type="Animation" id="Animation_0f2y1"]
-resource_name = "wake_up"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"wake_up"]
-}
-
-[sub_resource type="Animation" id="Animation_5084r"]
-resource_name = "walk"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0f2y1"]
-_data = {
-&"RESET": SubResource("Animation_h7gg4"),
-&"atack": SubResource("Animation_x34g0"),
-&"idle": SubResource("Animation_a5djg"),
-&"sleep": SubResource("Animation_r4uyl"),
-&"wake_up": SubResource("Animation_0f2y1"),
-&"walk": SubResource("Animation_5084r")
-}
-
-[node name="Bear" type="Node2D"]
+[node name="Bear" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_r4uyl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_msjsf")
-animation = &"idle"
+sprite_frames = SubResource("SpriteFrames_a5djg")
+animation = &"wake_up"
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0f2y1")
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 22)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_a5djg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12.5, 18)
+shape = SubResource("RectangleShape2D_h7gg4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_r4uyl")
+volume_db = 2.0
+max_distance = 4096.0
+attenuation = 1.1095694e-05
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
