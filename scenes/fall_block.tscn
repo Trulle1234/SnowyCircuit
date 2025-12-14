@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://q7b5vjywx2sn"]
+
+[ext_resource type="Texture2D" uid="uid://cqh2je6db0mpl" path="res://assets/sprites/misc/Blocks (16 x 16).png" id="1_wb5dw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpivu"]
+size = Vector2(16, 16)
+
+[node name="FallBlock" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wb5dw")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_tpivu")

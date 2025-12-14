@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var awake = false
 
 var snoring = preload("res://assets/sfx/snoring.wav")

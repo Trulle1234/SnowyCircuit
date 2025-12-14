@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dxyvd0g6qf2f7"]
 
-[ext_resource type="Script" uid="uid://ef3gy7dvjnhe" path="res://slowzone.gd" id="1_lmbpk"]
+[ext_resource type="Script" uid="uid://ef3gy7dvjnhe" path="res://scripts/slowzone.gd" id="1_lmbpk"]
 
 [node name="Slowzone" type="Area2D"]
 collision_mask = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://bgglqusn5fu3k"]
+[gd_scene load_steps=67 format=4 uid="uid://bgglqusn5fu3k"]
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_omffp"]
 [ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_7pxtr"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://bv3qprkc70thj" path="res://scripts/door_5.gd" id="22_vxf3i"]
 [ext_resource type="PackedScene" uid="uid://c0klld1gqpkhr" path="res://scenes/bear.tscn" id="24_cqrih"]
 [ext_resource type="PackedScene" uid="uid://dxyvd0g6qf2f7" path="res://scenes/slowzone.tscn" id="25_odo46"]
+[ext_resource type="PackedScene" uid="uid://wxgo27kqxdjy" path="res://scenes/fall_block_spawner.tscn" id="28_657iy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnolr"]
 texture = ExtResource("6_nk72f")
@@ -837,6 +838,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk72f"]
 size = Vector2(1288, 309)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy4hl"]
+size = Vector2(338, 16)
+
 [node name="Level10" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -976,6 +980,7 @@ position = Vector2(0, -1)
 tile_set = SubResource("TileSet_lya4r")
 
 [node name="Player" parent="." instance=ExtResource("18_1qwk1")]
+position = Vector2(838, -30)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -13)
@@ -1038,5 +1043,11 @@ position = Vector2(-1, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slowzone"]
 position = Vector2(366, -96.5)
 shape = SubResource("RectangleShape2D_nk72f")
+
+[node name="FallBlockSpawner" parent="." instance=ExtResource("28_657iy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallBlockSpawner"]
+position = Vector2(712, -163)
+shape = SubResource("RectangleShape2D_yy4hl")
 
 [connection signal="start_sequence_done" from="Enemies/Bear" to="Platforms/Door1" method="_on_bear_start_sequence_done"]
