@@ -158,7 +158,7 @@ script = ExtResource("1_r4uyl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a5djg")
-animation = &"attack"
+animation = &"idle"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

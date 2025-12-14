@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wxgo27kqxdjy"]
+
+[ext_resource type="Script" uid="uid://cna2gcl5e4dlf" path="res://scripts/fall_block_spawner.gd" id="1_jxj3y"]
+
+[node name="FallBlockSpawner" type="Area2D"]
+script = ExtResource("1_jxj3y")
