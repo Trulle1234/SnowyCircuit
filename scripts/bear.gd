@@ -9,6 +9,7 @@ var snoring = preload("res://assets/sfx/snoring.wav")
 var roar = preload("res://assets/sfx/roar.wav")
 
 signal start_sequence_done
+signal spawn_blocks
 
 func _ready() -> void:
 	RandomMusicPlayer.play_fast_tracks = false
@@ -46,5 +47,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	await sprite.animation_finished
 	
 	emit_signal("start_sequence_done")
+	
+	emit_signal("spawn_blocks")
 	
 	sprite.play("idle")

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://wxgo27kqxdjy"]
+[gd_scene load_steps=3 format=3 uid="uid://wxgo27kqxdjy"]
 
 [ext_resource type="Script" uid="uid://cna2gcl5e4dlf" path="res://scripts/fall_block_spawner.gd" id="1_jxj3y"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxj3y"]
+size = Vector2(322, 91)
+
 [node name="FallBlockSpawner" type="Area2D"]
 script = ExtResource("1_jxj3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(172, -35.5)
+shape = SubResource("RectangleShape2D_jxj3y")

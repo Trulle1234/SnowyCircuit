@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://q7b5vjywx2sn"]
+[gd_scene load_steps=5 format=3 uid="uid://q7b5vjywx2sn"]
 
 [ext_resource type="Texture2D" uid="uid://cqh2je6db0mpl" path="res://assets/sprites/misc/Blocks (16 x 16).png" id="1_wb5dw"]
+[ext_resource type="PackedScene" uid="uid://cmcbjd5n56gt3" path="res://scenes/killzone.tscn" id="2_tpivu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpivu"]
 size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86l2j"]
+size = Vector2(14, 15)
 
 [node name="FallBlock" type="RigidBody2D"]
 
@@ -16,3 +20,9 @@ region_rect = Rect2(48, 16, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_tpivu")
+
+[node name="Killzone" parent="." instance=ExtResource("2_tpivu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_86l2j")
