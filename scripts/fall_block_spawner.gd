@@ -15,7 +15,10 @@ func get_random_cord() -> Vector2:
 	return global_position + local_pos
 
 func spawn(amount: int) -> void:
-	for i in range(amount):
+	for i in range(amount + 1):
 		var instance = FALL_BLOCK.instantiate()
 		instance.global_position = get_random_cord()
 		get_tree().current_scene.add_child(instance)
+
+func _on_bear_spawn_blocks() -> void:
+	spawn(5)

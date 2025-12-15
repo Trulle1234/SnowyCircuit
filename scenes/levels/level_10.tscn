@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://bgglqusn5fu3k"]
+[gd_scene load_steps=66 format=4 uid="uid://bgglqusn5fu3k"]
 
 [ext_resource type="Script" uid="uid://cug7vkhtvf3qk" path="res://scripts/game_manager.gd" id="1_omffp"]
 [ext_resource type="PackedScene" uid="uid://dqlcynhf1g6vh" path="res://scenes/ui.tscn" id="2_7pxtr"]
@@ -838,9 +838,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk72f"]
 size = Vector2(1288, 309)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy4hl"]
-size = Vector2(338, 16)
-
 [node name="Level10" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -1045,9 +1042,7 @@ position = Vector2(366, -96.5)
 shape = SubResource("RectangleShape2D_nk72f")
 
 [node name="FallBlockSpawner" parent="." instance=ExtResource("28_657iy")]
+position = Vector2(554, -155)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallBlockSpawner"]
-position = Vector2(712, -163)
-shape = SubResource("RectangleShape2D_yy4hl")
-
+[connection signal="spawn_blocks" from="Enemies/Bear" to="FallBlockSpawner" method="_on_bear_spawn_blocks"]
 [connection signal="start_sequence_done" from="Enemies/Bear" to="Platforms/Door1" method="_on_bear_start_sequence_done"]
