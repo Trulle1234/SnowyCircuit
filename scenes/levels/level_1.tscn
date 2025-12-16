@@ -929,6 +929,7 @@ position_smoothing_enabled = true
 position = Vector2(0, 141)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-1, 53)
 shape = SubResource("WorldBoundaryShape2D_ca42v")
 
 [node name="Conis" type="Node" parent="."]

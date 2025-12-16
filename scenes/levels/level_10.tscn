@@ -1042,7 +1042,7 @@ position = Vector2(366, -96.5)
 shape = SubResource("RectangleShape2D_nk72f")
 
 [node name="FallBlockSpawner" parent="." instance=ExtResource("28_657iy")]
-position = Vector2(554, -155)
+position = Vector2(544, -180)
 
 [connection signal="spawn_blocks" from="Enemies/Bear" to="FallBlockSpawner" method="_on_bear_spawn_blocks"]
 [connection signal="start_sequence_done" from="Enemies/Bear" to="Platforms/Door1" method="_on_bear_start_sequence_done"]

@@ -746,7 +746,7 @@ sources/15 = SubResource("TileSetAtlasSource_biocx")
 sources/12 = SubResource("TileSetAtlasSource_00rsc")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_irlr6"]
-distance = 65.0
+distance = 26.0
 
 [sub_resource type="Animation" id="Animation_3u6br"]
 length = 0.001
@@ -1298,7 +1298,7 @@ position_smoothing_enabled = true
 position = Vector2(0, 75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 66)
+position = Vector2(0, 57)
 shape = SubResource("WorldBoundaryShape2D_irlr6")
 
 [node name="Lava" type="Node" parent="."]
