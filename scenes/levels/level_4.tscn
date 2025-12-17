@@ -1630,7 +1630,7 @@ position_smoothing_enabled = true
 position = Vector2(0, 53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(5, 90)
+position = Vector2(1943, 64)
 shape = SubResource("WorldBoundaryShape2D_60f7k")
 
 [node name="Lava" type="Node" parent="."]

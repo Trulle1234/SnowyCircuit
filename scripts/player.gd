@@ -94,7 +94,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, 800 * delta)
 
-		move_and_slide()
+	move_and_slide()
 
 func apply_knockback(from_position: Vector2, strength_x, strength_y) -> void:
 	var dir: float = sign(global_position.x - from_position.x)
