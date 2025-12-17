@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw6rgrcrlnrbs"
-path="res://.godot/imported/SnowyCircuitV02.apple-touch-icon.png-0c99fe4f6d109d8923105159b88a431b.ctex"
+uid="uid://qtpem50i76ky"
+path="res://.godot/imported/Button.png-6e33fef73ac9772b4db67a7c15bc818c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://builds/SnowyCiricutV02/SnowyCircuitV02.apple-touch-icon.png"
-dest_files=["res://.godot/imported/SnowyCircuitV02.apple-touch-icon.png-0c99fe4f6d109d8923105159b88a431b.ctex"]
+source_file="res://assets/sprites/misc/Button.png"
+dest_files=["res://.godot/imported/Button.png-6e33fef73ac9772b4db67a7c15bc818c.ctex"]
 
 [params]
 

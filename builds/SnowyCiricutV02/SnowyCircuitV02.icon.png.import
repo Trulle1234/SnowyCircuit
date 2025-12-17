@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buu6esq28xxo6"
-path="res://.godot/imported/SnowyCircuitV02.icon.png-c1e5a7f4ba7d328c21514275bd9833c8.ctex"
+path="res://.godot/imported/SnowyCircuitV02.icon.png-9db0d31b83bb2dbb7726bd9cb2fa1f9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://builds/SnowyCircuitV02.icon.png"
-dest_files=["res://.godot/imported/SnowyCircuitV02.icon.png-c1e5a7f4ba7d328c21514275bd9833c8.ctex"]
+source_file="res://builds/SnowyCiricutV02/SnowyCircuitV02.icon.png"
+dest_files=["res://.godot/imported/SnowyCircuitV02.icon.png-9db0d31b83bb2dbb7726bd9cb2fa1f9e.ctex"]
 
 [params]
 

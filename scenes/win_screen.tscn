@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7pdt0hqa203t"]
+
+[ext_resource type="Theme" uid="uid://dbhol82uf2kbs" path="res://scripts/button.tres" id="1_erk2x"]
+[ext_resource type="FontFile" uid="uid://dgkb7afoeic48" path="res://assets/fonts/monogram-extended-italic.ttf" id="2_2l6cc"]
+
+[node name="WinScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_erk2x")
+theme_override_colors/font_color = Color(0.105882354, 0.078431375, 0.11764706, 1)
+theme_override_fonts/font = ExtResource("2_2l6cc")
+theme_override_font_sizes/font_size = 48
+text = "TEMP TEXT"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_erk2x")
+text = "Restart at Level 1"

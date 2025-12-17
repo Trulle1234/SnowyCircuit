@@ -744,7 +744,7 @@ position = Vector2(167, -58)
 position = Vector2(720, -16)
 
 [node name="NextLevelDoor" parent="." instance=ExtResource("20_6oggx")]
-position = Vector2(1664, -16)
+position = Vector2(1664, 0)
 
 [node name="EntrenceDoor" type="Sprite2D" parent="."]
 position = Vector2(-18, -17)
