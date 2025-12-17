@@ -1139,7 +1139,7 @@ tile_map_data = PackedByteArray("AABMAAQAAAADAAUAAABMAAUAAAADAAUAAABMAAYAAAADAAU
 tile_set = SubResource("TileSet_a8s1b")
 
 [node name="Player" parent="." instance=ExtResource("18_eqjcn")]
-position = Vector2(1364, -74)
+position = Vector2(0, 16)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -13)
@@ -1149,10 +1149,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Killzone" parent="." instance=ExtResource("19_q2dvh")]
-position = Vector2(0, 75)
+position = Vector2(2, 35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 66)
+position = Vector2(1, 107)
 shape = SubResource("WorldBoundaryShape2D_irlr6")
 
 [node name="Lava" type="Node" parent="."]

@@ -10,6 +10,7 @@ size = Vector2(16, 16)
 size = Vector2(14, 15)
 
 [node name="FallBlock" type="RigidBody2D"]
+z_index = 4096
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wb5dw")

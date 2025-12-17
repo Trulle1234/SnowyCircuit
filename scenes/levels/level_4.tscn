@@ -1630,7 +1630,7 @@ position_smoothing_enabled = true
 position = Vector2(0, 53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 65)
+position = Vector2(1943, 64)
 shape = SubResource("WorldBoundaryShape2D_60f7k")
 
 [node name="Lava" type="Node" parent="."]
@@ -1731,9 +1731,6 @@ position = Vector2(1112, -184)
 
 [node name="Coin17" parent="Conis" instance=ExtResource("23_1s8bw")]
 position = Vector2(1176, -184)
-
-[node name="Coin18" parent="Conis" instance=ExtResource("23_1s8bw")]
-position = Vector2(1240, -72)
 
 [node name="Coin19" parent="Conis" instance=ExtResource("23_1s8bw")]
 position = Vector2(1384, -168)
