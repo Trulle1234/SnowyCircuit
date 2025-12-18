@@ -146,8 +146,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5djg"]
-height = 32.000004
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4uyl"]
+size = Vector2(66, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7gg4"]
 size = Vector2(84.5, 42)
@@ -162,9 +162,9 @@ animation = &"idle"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24, 22)
+position = Vector2(20.5, -1)
 rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_a5djg")
+shape = SubResource("RectangleShape2D_r4uyl")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
