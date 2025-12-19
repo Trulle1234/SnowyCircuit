@@ -977,6 +977,7 @@ position = Vector2(0, -1)
 tile_set = SubResource("TileSet_lya4r")
 
 [node name="Player" parent="." instance=ExtResource("18_1qwk1")]
+position = Vector2(884, -27)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -13)
@@ -1041,7 +1042,7 @@ position = Vector2(366, -96.5)
 shape = SubResource("RectangleShape2D_nk72f")
 
 [node name="FallBlockSpawner" parent="." instance=ExtResource("28_657iy")]
-position = Vector2(543, -279)
+position = Vector2(543, -902)
 
 [connection signal="spawn_blocks" from="Enemies/Bear" to="FallBlockSpawner" method="_on_bear_spawn_blocks"]
 [connection signal="start_sequence_done" from="Enemies/Bear" to="Platforms/Door1" method="_on_bear_start_sequence_done"]

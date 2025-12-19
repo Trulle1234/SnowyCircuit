@@ -8,6 +8,10 @@ extends RigidBody2D
 
 var draw_indicator = true
 
+func _integrate_forces(state):
+	var dt = state.step
+	state.linear_velocity *= (1.0 - 0.75 * dt)
+	
 func _process(_delta: float) -> void:
 	queue_redraw()
 
