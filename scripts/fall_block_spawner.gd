@@ -38,4 +38,4 @@ func spawn(amount: int) -> void:
 		get_tree().current_scene.add_child(instance)
 
 func _on_bear_spawn_blocks() -> void:
-	spawn(8)
+	spawn(7)

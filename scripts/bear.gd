@@ -46,6 +46,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	sprite.play("attack")
 	await sprite.animation_finished
 	
+	await get_tree().create_timer(1.5).timeout
 	emit_signal("start_sequence_done")
 	
 	emit_signal("spawn_blocks")
