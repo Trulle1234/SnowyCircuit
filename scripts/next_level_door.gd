@@ -45,4 +45,4 @@ func _on_timer_timeout() -> void:
 	if ResourceLoader.exists(next_level_path):
 		get_tree().change_scene_to_file(next_level_path)
 	else:
-		get_tree().change_scene_to_file("res://scenes/win.tscn")
+		get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
