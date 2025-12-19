@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://q7b5vjywx2sn"]
+[gd_scene load_steps=6 format=3 uid="uid://q7b5vjywx2sn"]
 
+[ext_resource type="Script" uid="uid://rg3w0c6wgsuy" path="res://scenes/fall_block.gd" id="1_86l2j"]
 [ext_resource type="Texture2D" uid="uid://cqh2je6db0mpl" path="res://assets/sprites/misc/Blocks (16 x 16).png" id="1_wb5dw"]
 [ext_resource type="PackedScene" uid="uid://cmcbjd5n56gt3" path="res://scenes/killzone.tscn" id="2_tpivu"]
 
@@ -11,6 +12,8 @@ size = Vector2(14, 15)
 
 [node name="FallBlock" type="RigidBody2D"]
 z_index = 4096
+lock_rotation = true
+script = ExtResource("1_86l2j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wb5dw")
@@ -27,3 +30,12 @@ shape = SubResource("RectangleShape2D_tpivu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(8, 8.5)
 shape = SubResource("RectangleShape2D_86l2j")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 0)
+target_position = Vector2(0, 200)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
